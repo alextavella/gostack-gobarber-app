@@ -39,7 +39,7 @@ export default function SignUp({ navigation }) {
 
         <Form>
           <FormInput
-            icon="mail-outline"
+            icon="person-outline"
             autoCorrect={false}
             autoCapitalize="none"
             placeholder="Nome completo"
