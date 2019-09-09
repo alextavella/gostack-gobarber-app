@@ -9,9 +9,11 @@ import {
   FormInput,
   SubmitButton,
   Separator,
+  LogoutButton,
 } from './styles';
 
 import { updateProfileRequest } from '~/store/modules/user/actions';
+import { signOut } from '~/store/modules/auth/actions';
 
 import Background from '~/components/Background';
 
@@ -30,7 +32,7 @@ export default function Profile() {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
-  const loading = useSelector(state => state.auth.loading);
+  const loading = useSelector(state => state.user.loading);
 
   useEffect(() => {
     setOldPassword('');
@@ -48,6 +50,10 @@ export default function Profile() {
         confirmPassword,
       }),
     );
+  }
+
+  function handleLogout() {
+    dispatch(signOut());
   }
 
   return (
@@ -116,6 +122,8 @@ export default function Profile() {
           <SubmitButton loading={loading} onPress={handleSubmit}>
             Atualizar perfil
           </SubmitButton>
+
+          <LogoutButton onPress={handleLogout}>Sair</LogoutButton>
         </Form>
       </Container>
     </Background>
