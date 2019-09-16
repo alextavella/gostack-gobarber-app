@@ -22,8 +22,8 @@ export default function SignUp({ navigation }) {
   const emailRef = useRef();
   const passwordRef = useRef();
 
-  const [name, setName] = useState('Teste');
-  const [email, setEmail] = useState('teste@gmail.com');
+  const [name, setName] = useState('Paulo Augusto');
+  const [email, setEmail] = useState('cliente@gmail.com');
   const [password, setPassword] = useState('asdasd');
 
   const loading = useSelector(state => state.auth.loading);

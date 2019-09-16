@@ -6,6 +6,7 @@ import api from '~/services/api';
 import { ACTIONS_TYPE as persistActions } from '../persist/actions';
 import {
   ACTIONS_TYPE as authActions,
+  signInRequest,
   signInSuccess,
   signFailure,
 } from './actions';
@@ -53,6 +54,8 @@ export function* signUp({ payload }) {
       email,
       password,
     });
+
+    yield put(signInRequest(email, password));
 
     // history.push('/');
   } catch (err) {
