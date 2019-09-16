@@ -10,6 +10,7 @@ export const HourList = styled.FlatList.attrs({
   numColumns: 2,
   showsVerticalScrollIndicator: false,
 })`
+  margin-top: 60px;
   padding: 0 20px;
 `;
 
